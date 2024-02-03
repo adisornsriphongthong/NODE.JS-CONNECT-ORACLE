@@ -1,6 +1,8 @@
 import express from 'express'
-import oracleDatabase from './database/oracledb'
+import dotenv from 'dotenv'
+import router from './route/masterRoute'
 const app = express()
+dotenv.config()
 
-oracleDatabase.oracleDatabase()
+app.use(router)
 app.listen(3000, () => console.log('The server is running on http://localhost:3000'))
